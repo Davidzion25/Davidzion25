@@ -1,0 +1,8 @@
+body { font-family: Arial; background:#f4f8ff; text-align:center; margin:0; }
+header { background:#0a4d8c; color:white; padding:20px; }
+.btn { background:white; color:#0a4d8c; padding:10px; text-decoration:none; margin:5px; border-radius:5px; }
+.subjects { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px; }
+.card { background:white; padding:30px; text-decoration:none; color:#0a4d8c; border-radius:10px; font-weight:bold; }
+.card:hover { background:#0a4d8c; color:white; }
+form { max-width:300px; margin:auto; }
+input,button { width:100%; padding:10px; margin:10px 0; }

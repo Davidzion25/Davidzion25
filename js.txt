@@ -1,0 +1,36 @@
+function register(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  localStorage.setItem(email, JSON.stringify({name, password}));
+  document.getElementById("msg").innerHTML="Registration successful. Login now!";
+}
+
+function login(e){
+  e.preventDefault();
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let user = JSON.parse(localStorage.getItem(email));
+  if(user && user.password === password){
+    window.location.href="index.html";
+  } else {
+    document.getElementById("msg").innerHTML="Invalid credentials";
+  }
+}
+
+function checkAdmin(){
+  let admin = prompt("Enter Admin Code");
+  if(admin !== "1234"){
+    alert("Access Denied");
+    window.location.href="index.html";
+  }
+}
+
+function showQuestion(){
+  document.getElementById("question").style.display="block";
+}
+
+function checkAnswer(ans){
+  document.getElementById("result").innerHTML = ans==="B" ? "Correct ✔" : "Wrong ❌";
+}
